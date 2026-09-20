@@ -12,8 +12,8 @@ try:
         deck.update()
         now = clock.time()
         if now - last_sample >= 500:
-            deck.send('battery_mv', hub.battery.voltage())
-            deck.send('state', 'active' if deck.active() else 'idle')
+            deck.send('bat', hub.battery.voltage())
+            deck.send('st', 'on' if deck.active() else 'off')
             last_sample = now
         wait(5)
 finally:

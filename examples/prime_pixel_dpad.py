@@ -22,14 +22,14 @@ try:
 
         pressed = None
         if deck.active():
-            if deck.dpad('up'):
-                pressed = 'up'
-            elif deck.dpad('right'):
-                pressed = 'right'
-            elif deck.dpad('down'):
-                pressed = 'down'
-            elif deck.dpad('left'):
-                pressed = 'left'
+            if deck.dpad('u1'):
+                pressed = 'u1'
+            elif deck.dpad('r1'):
+                pressed = 'r1'
+            elif deck.dpad('d1'):
+                pressed = 'd1'
+            elif deck.dpad('l1'):
+                pressed = 'l1'
 
         now = clock.time()
         if pressed is None:
@@ -39,11 +39,11 @@ try:
             last_move = now
             new_x = x
             new_y = y
-            if pressed == 'up':
+            if pressed == 'u1':
                 new_y = max(0, y - 1)
-            elif pressed == 'right':
+            elif pressed == 'r1':
                 new_x = min(4, x + 1)
-            elif pressed == 'down':
+            elif pressed == 'd1':
                 new_y = min(4, y + 1)
             else:
                 new_x = max(0, x - 1)

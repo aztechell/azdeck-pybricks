@@ -22,11 +22,12 @@
 | Файл | Назначение |
 | --- | --- |
 | [`examples/api_showcase.py`](examples/api_showcase.py) | Все публичные методы `AzDeck` |
-| [`examples/two_motors.py`](examples/two_motors.py) | Дифф-привод: `throttle` / `turn` / `stop` |
+| [`examples/two_motors.py`](examples/two_motors.py) | Дифф-привод: `y1` / `x1` / `b1` |
 | [`examples/prime_pixel_dpad.py`](examples/prime_pixel_dpad.py) | Пиксель на матрице 5×5 по D-Pad |
 | [`examples/telemetry.py`](examples/telemetry.py) | Только телеметрия батареи |
 
 Имена каналов в профиле AzDeck должны совпадать с именами в программе.
+Короткие имена по умолчанию: кнопки `b1`…, D-Pad `u1`/`d1`/`l1`/`r1`, стик `x1`/`y1`, слайдер `sp1`.
 
 ---
 
@@ -76,7 +77,7 @@ BLE profile ≥ **1.3**. Нужны `ujson` / `usys` / `uselect` в прошив
 
 ## Протокол (кратко)
 
-- **Control** — JSON-объект без `type`, например `{"throttle":0.5,"turn":0}`.
+- **Control** — JSON-объект без `type`, например `{"y1":0.5,"x1":0}`.
 - **Ping** — `AZDECK_PING:…` → ответ `AZDECK_PONG:…` (таймер управления не продлевает).
 - **Telemetry** — JSON с `"type":"telemetry"` и вашими ключами из `send()`.
 
